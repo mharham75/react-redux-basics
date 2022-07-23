@@ -7,7 +7,7 @@ import "./ChocolateStyle.css"
 
 const ChocolateComponent = ({numberOfChocolates, buyCholocate}) => {
 
-    const[number,setNumber] = useState()
+    const[number,setNumber] = useState(1)
 
   return (
     <>

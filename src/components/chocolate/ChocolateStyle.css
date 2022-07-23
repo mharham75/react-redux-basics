@@ -5,3 +5,16 @@
     border: 2px solid rgb(140, 151, 140);
     border-radius: 5px;
 }
+
+button{
+    background: #333;
+    color: #fff;
+    border: 2px solid black;
+    padding: 8px;
+    margin: 10px;
+    border-radius: 4px;
+}
+
+button:hover{
+    opacity: 0.8;
+}
