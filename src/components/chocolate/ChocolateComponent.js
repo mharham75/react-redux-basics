@@ -1,16 +1,21 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { connect } from 'react-redux'
 
 import { buyChocolate } from '../../redux/chocolate/ChocolatesAction'
 
 import "./ChocolateStyle.css"
 
-const ChocolateComponent = ({numberOfChocolates, buyChocolate}) => {
+const ChocolateComponent = ({numberOfChocolates, buyCholocate}) => {
+
+    const[number,setNumber] = useState()
+
   return (
     <>
         <p>Number Of Chocolates - {numberOfChocolates}</p>
-        <input className="input" type="text" placeholder="enter no of chocolates"/>
-        <button>Click to buy Chocolate!</button>
+        <input className="input" type="text" placeholder="enter no of chocolates"
+            onChange={ e => setNumber(e.target.value)}
+        />
+        <button onClick={ () => buyCholocate(number)}>Click to buy {number} Chocolate!</button>
     </>
   )
 }
@@ -23,7 +28,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return{
-        buyCholocate: () => dispatch(buyChocolate())
+        buyCholocate: number => dispatch(buyChocolate(number))
     }
 }
 

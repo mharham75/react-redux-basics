@@ -8,7 +8,7 @@ const ChocolateReducer = (state=initialChocolateState, action) => {
     switch(action.type){
         case BUY_CHOCOLATE: return{
             ...state,
-            numOfChocolates: state.numOfChocolates-1
+            numOfChocolates: state.numOfChocolates-action.payload
         }
         default: return state
     }
